@@ -69,7 +69,7 @@ def update_contact(current_user_token,id):
     return jsonify(response)
 
 
-# DELETE car ENDPOINT
+# DELETE endpoint
 @api.route('/contacts/<id>', methods = ['DELETE'])
 @token_required
 def delete_contact(current_user_token, id):

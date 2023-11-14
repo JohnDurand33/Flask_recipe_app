@@ -6,12 +6,12 @@ import decimal
 from models import User #, and also whatever the other class name ends up as
 
 def token_required(our_flask_function):   #Flask built-in to use for token creation / sign-up / login / logout
-    @wraps(our_flask_function)
+    @wraps(our_flask_function)   #Brandt Q - ?
     def decorated(*args, **kwargs):
         token = None
 
         if 'x-access-token' in request.headers: #If token doesn't exist
-            token = request.headers['x-access-token'].split(' ')[1]
+            token = request.headers['x-access-token'].split(' ')[1] #Brandt Q - ?
         if not token:
             return jsonify({'message': 'Token is missing.'}), 401
 

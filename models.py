@@ -14,11 +14,11 @@ login_manager = LoginManager()
 ma = Marshmallow()
 db = SQLAlchemy()
 
-@login_manager.user_loader  
+@login_manager.user_loader  #Brandt Q - What is this for?
 def load_user(user_id):
     return User.query.get(user_id)
 
-class User(db.Model, UserMixin):
+class User(db.Model, UserMixin): #Brandt Q - I don't seem to be able to query any tables
     id = db.Column(db.String, primary_key=True)
     first_name = db.Column(db.String(150), nullable=True, default='')
     last_name = db.Column(db.String(150), nullable = True, default = '')
