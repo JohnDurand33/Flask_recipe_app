@@ -4,16 +4,16 @@ from models import db, User, Contact, contact_schema, contacts_schema
 
 api = Blueprint('api', __name__, url_prefix='/api')
 
-@api.route('/getdata')
+@api.route('/getdata') 
 def getdata():
     return {'yee': 'naw'}
 
-@api.route('/data')
-def viewdata():
-    data = get_contact()
-    response = jsonify(data)
-    print(response)
-    return render_template('index.html', data = data)
+# @api.route('/data')
+# def viewdata():
+#     data = get_contact()
+#     response = jsonify(data)
+#     print(response)
+#     return render_template('index.html', data = data)
 
 @api.route('/contacts', methods = ['POST'])
 @token_required
