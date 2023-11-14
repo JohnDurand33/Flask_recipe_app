@@ -8,12 +8,12 @@ api = Blueprint('api', __name__, url_prefix='/api')
 def getdata():
     return {'yee': 'naw'}
 
-# @api.route('/data')
-# def viewdata():
-#     data = get_contact()
-#     response = jsonify(data)
-#     print(response)
-#     return render_template('index.html', data = data)
+@api.route('/data')
+def viewdata():
+    data = get_contact()
+    response = jsonify(data)
+    print(response)
+    return render_template('index.html', data = data)
 
 @api.route('/contacts', methods = ['POST'])
 @token_required

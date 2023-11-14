@@ -1,8 +1,9 @@
 from flask import Flask
-from config import Config #importing from config.py
+from config import Config 
+from .api.routes import api
 from.site.routes import site
 from .authentication.routes import auth
-from api.routes import api
+
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate 

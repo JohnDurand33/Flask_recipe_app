@@ -6,7 +6,7 @@ from flask_login import login_user, logout_user, LoginManager, current_user, log
 
 auth = Blueprint('auth',__name__, template_folder='auth_templates')
 
-@auth.route('signup', methods = ['GET', 'POST'])
+@auth.route('/signup', methods = ['GET', 'POST'])
 def signup():
     form = UserLoginForm()
 
@@ -26,7 +26,7 @@ def signup():
         raise Exception('Invalid form data: Please check your form')
     return render_template('sign_up.html', form=form)
 
-@auth.route('signin', methods = ['GET', 'POST'])
+@auth.route('/signin', methods = ['GET', 'POST'])
 def signin():
     form = UserLoginForm()
 
@@ -47,8 +47,8 @@ def signin():
         raise Exception('Invalid form data: Please check your form')
     return render_template('sign_up.html', form=form)
 
-@auth.route('Logout')
-def lougout():
+@auth.route('/Logout')
+def logout():
     logout_user()
     return redirect(url_for('site.home'))
             
