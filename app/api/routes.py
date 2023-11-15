@@ -49,7 +49,7 @@ def get_contact_two(current_user_token, id):
     if fan == current_user_token.token:
         contact = Contact.query.get(id)
         response = contact_schema.dump(contact)
-        return jsonify(response)
+        return jsonify(response) #Brandt - What does this mean?
     else:
         return jsonify({"message": "Valid Token Required"}),401
 
