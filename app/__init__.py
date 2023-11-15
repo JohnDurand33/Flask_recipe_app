@@ -15,7 +15,7 @@ app = Flask(__name__) #  Everything flows from here AKA headquarters.
 #Also checks to make sure only one app running at a time
 CORS(app)
 
-app.register_blueprint(site) #Brandt - Why do I need to register_blueprint?
+app.register_blueprint(site) #
 app.register_blueprint(auth)
 app.register_blueprint(api)
 

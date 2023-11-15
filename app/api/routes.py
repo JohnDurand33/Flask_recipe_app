@@ -18,6 +18,8 @@ def getdata():
 @api.route('/contacts', methods = ['POST'])
 @token_required
 def create_contact(current_user_token):
+    data = request.json()
+    print(data)
     name = request.json['name']
     email = request.json['email']
     phone_number = request.json['phone_number']
@@ -42,7 +44,7 @@ def get_contact(current_user_token):
     response = contacts_schema.dump(contacts)
     return jsonify(response)
 
-@api.route('/contacts/<id>', methods = ['GET']) #Brandt - jsonify?
+@api.route('/contacts/<id>', methods = ['GET'])
 @token_required
 def get_contact_two(current_user_token, id):
     fan = current_user_token.token
