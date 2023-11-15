@@ -45,7 +45,7 @@ def signin():
                 flash('You have failed in your attempt to acces this content.', 'auth-failed')
     except:
         raise Exception('Invalid form data: Please check your form')
-    return render_template('sign_up.html', form=form)
+    return render_template('sign_in.html', form=form)
 
 @auth.route('/Logout')
 def logout():
