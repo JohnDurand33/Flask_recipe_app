@@ -18,8 +18,8 @@ def getdata():
 @api.route('/contacts', methods = ['POST'])
 @token_required
 def create_contact(current_user_token):
-    data = request.json()
-    print(data)
+    # data = request.json()
+    # print(data)
     name = request.json['name']
     email = request.json['email']
     phone_number = request.json['phone_number']
