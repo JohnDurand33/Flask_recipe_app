@@ -6,7 +6,7 @@ from .authentication.routes import auth
 
 
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate 
+from flask_migrate import Migrate
 from models import db as root_db, login_manager, ma
 from flask_cors import CORS
 from helpers import JSONEncoder
@@ -15,7 +15,7 @@ app = Flask(__name__) #  Everything flows from here AKA headquarters.
 #Also checks to make sure only one app running at a time
 CORS(app)
 
-app.register_blueprint(site) #
+app.register_blueprint(site) 
 app.register_blueprint(auth)
 app.register_blueprint(api)
 
