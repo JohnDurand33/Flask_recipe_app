@@ -14,6 +14,6 @@ class Config():
     FLASK_APP = os.getenv('FLASK_APP')
     # FLASK_DEBUG = os.getenv('FLASK_DEBUG')
     # FLASK_ENV = os.getenv('FLASK_ENV')
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'Winter23#'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:///' + os.path.join(basedir, 'app.db')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
     SQLALCHEMY_TRACK_NOTIFICATIONS = False
