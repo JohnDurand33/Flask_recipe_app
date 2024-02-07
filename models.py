@@ -14,7 +14,7 @@ login_manager = LoginManager()
 ma = Marshmallow()
 db = SQLAlchemy()
 
-@login_manager.user_loader  #Brandt - What is this for?
+@login_manager.user_loader  #What is this for?
 def load_user(user_id):
     return User.query.get(user_id)
 
