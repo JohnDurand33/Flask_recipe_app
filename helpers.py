@@ -33,3 +33,4 @@ class JSONEncoder(json.JSONEncoder):
             #Convert decimal instances into strings
             return str(obj)
         return super(JSONEncoder,self).default(obj)
+    
